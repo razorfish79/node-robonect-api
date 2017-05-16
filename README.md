@@ -6,6 +6,21 @@ NodeJS Module for Robonect HTTP API
 ## Status: Work in Progress
 
 ## Example:
+
+In the example below, node-robonect-api has been set up to work with Domoticz.
+
+Domoticz has 4 virtual text devices:
+
+idx	Name
+
+568	Mower Status
+
+569	Mower Timer Status
+
+570	Mower Battery Status
+
+572	Mower Mode
+
 ```javascript
 #!/usr/bin/nodejs
 
@@ -20,6 +35,12 @@ STATUS[7] = "Error";
 STATUS[8] = "Lost signal";
 STATUS[16] = "Switched off";
 STATUS[17] = "Sleeping";
+
+var STATUSMODE = new Array();
+STATUSMODE[0] = "Auto";
+STATUSMODE[1] = "Manuell";
+STATUSMODE[2] = "Home";
+STATUSMODE[3] = "Demo";
 
 var TIMERSTATUS = new Array();
 TIMERSTATUS[0] = "Disabled";
@@ -44,6 +65,7 @@ var robonect = new mower.robonect(options);
 robonect.on('mowerEvent', function(mowerName, category, eventType, eventValue) {
 	//console.log(mowerName, category, eventType, eventValue);
 	if (category === 'status' && eventType === 'status') setDomoDevice(mowerName, eventType, 568, STATUS[eventValue])
+	if (category === 'status' && eventType === 'mode') setDomoDevice(mowerName, eventType, 572, STATUSMODE[eventValue])
 	if (category === 'timer' && eventType === 'status') setDomoDevice(mowerName, eventType, 569, TIMERSTATUS[eventValue])
 	if (category === 'status' && eventType === 'battery') setDomoDevice(mowerName, eventType, 570, eventValue)
 });
