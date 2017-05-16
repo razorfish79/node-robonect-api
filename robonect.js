@@ -17,6 +17,7 @@ var robonect = function(options) {
 	this.statusStatus = -1;
 	this.timerStatus = -1;
 	this.statusBattery = -1;
+	this.statusMode = -1;
 	this.client = this.connect(options)
 	if (options.log) TRACE = options.log;
 };
@@ -62,6 +63,11 @@ function handleData(self, jsonObject) {
 				this.statusBattery = jsonObject.status.battery;
 				console.log(jsonObject.name, "New mower battery level: ", this.statusBattery);
 				self.emit("mowerEvent", jsonObject.name, "status",  "battery", this.statusBattery);
+			}
+			if (this.statusMode !== jsonObject.status.mode){
+				this.statusMode = jsonObject.status.mode;
+				console.log(jsonObject.name, "New mode status: ", this.statusMode);
+				self.emit("mowerEvent", jsonObject.name, "status",  "mode", this.statusMode);
 			}
 			if (this.timerStatus !== jsonObject.timer.status){
 				this.timerStatus = jsonObject.timer.status;
