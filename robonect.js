@@ -12,13 +12,13 @@ var BASEURI;
 
 // Module Loader
 var robonect = function(options) {
-	events.EventEmitter.call(this)
-	BASEURI = 'http://' + options.host + ':' + options.port
+	events.EventEmitter.call(this);
+	BASEURI = 'http://' + options.host + ':' + options.port;
 	this.statusStatus = -1;
 	this.timerStatus = -1;
 	this.statusBattery = -1;
 	this.statusMode = -1;
-	this.client = this.connect(options)
+	this.client = this.connect(options);
 	if (options.log) TRACE = options.log;
 };
 
@@ -44,7 +44,7 @@ robonect.prototype.connect = function(options) {
 	}
 	setInterval(function() {
 		requeststatusStatus() // Do a request every 5 seconds
-	}, 5000);
+	}, 10000);
 
 }
 
@@ -54,6 +54,11 @@ function handleData(self, jsonObject) {
 	if(jsonObject.hasOwnProperty('successful')){
 		if (jsonObject.successful){
 			//console.log("Mower name:", jsonObject.name);
+			if (this.timerStatus !== jsonObject.timer.status){
+				this.timerStatus = jsonObject.timer.status;
+				console.log(jsonObject.name, "New mower timer status: ", this.timerStatus);
+				self.emit("mowerEvent", jsonObject.name, "timer",  "status", this.timerStatus);
+			}
 			if (this.statusStatus !== jsonObject.status.status){
 				this.statusStatus = jsonObject.status.status;
 				console.log(jsonObject.name, "New mower status status:", this.statusStatus);
@@ -68,11 +73,6 @@ function handleData(self, jsonObject) {
 				this.statusMode = jsonObject.status.mode;
 				console.log(jsonObject.name, "New mode status: ", this.statusMode);
 				self.emit("mowerEvent", jsonObject.name, "status",  "mode", this.statusMode);
-			}
-			if (this.timerStatus !== jsonObject.timer.status){
-				this.timerStatus = jsonObject.timer.status;
-				console.log(jsonObject.name, "New mower timer status: ", this.timerStatus);
-				self.emit("mowerEvent", jsonObject.name, "timer",  "status", this.timerStatus);
 			}
 		}
 	}
