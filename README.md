@@ -71,6 +71,11 @@ robonect.on('mowerEvent', function(mowerName, category, eventType, eventValue) {
 	if (category === 'status' && eventType === 'battery') setDomoDevice(mowerName, eventType, 570, eventValue)
 });
 
+robonect.on('error', (err) => {
+	// Handle the error here.  
+	console.error('whoops! there was an error');
+});
+
 function getDateTime() {
 	var date = new Date();
 	var hour = date.getHours();
