@@ -150,3 +150,8 @@ Save your crontab. Your watchdog script should start the mymowerscript.js to run
 
 [ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
 * `npm update node-robonect-api`
+
+or as an alternative, update all your nodes by using:
+
+* `npm update`
+
