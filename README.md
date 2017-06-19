@@ -21,8 +21,7 @@ idx	Name
 
 572	Mower Mode
 
-** custom node-robonect-api script example, e.g. ~/domoticz/scripts/js/mymowerscript.js **
-
+custom node-robonect-api script example, e.g. ~/domoticz/scripts/js/mymowerscript.js
 ```javascript
 #!/usr/bin/nodejs
 
