@@ -21,6 +21,7 @@ idx	Name
 
 572	Mower Mode
 
+** custom node-robonect-api script example, ~/domoticz/scripts/js/mymowerscript.js **
 ```javascript
 #!/usr/bin/nodejs
 
@@ -112,7 +113,7 @@ function printOut(mowername, eventType, idx, sValue) {
 * `cd ~`
 * `npm install git://github.com/allan-gam/node-robonect-api.git`
 
-Now create your custom node-robonect-api script. Below is an example.
+Now create your custom node-robonect-api script.
 * `mkdir ~/domoticz/scripts/js`
 * `touch ~/domoticz/scripts/js/mymowerscript.js`
 * `chmod 755 ~/domoticz/scripts/js/mymowerscript.js`
