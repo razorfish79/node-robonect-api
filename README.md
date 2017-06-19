@@ -123,7 +123,7 @@ Check that it works by issuing the following command:
 Create a "watchdog" bash script and make it run every 10 minutes to check that your custom mower script is always running.
 * `mkdir ~/domoticz/scripts/sh`
 * `touch ~/domoticz/scripts/sh/robonect.sh`
-* `chmod 755 ~/domoticz/scripts/sh/robonect.sh
+* `chmod 755 ~/domoticz/scripts/sh/robonect.sh`
 Using your favourite editor, edit `~/domoticz/scripts/sh/robonect.sh` and add the following:
 ```
 #!/bin/bash
