@@ -115,7 +115,7 @@ Now create your custom node-robonect-api script. Below is an example.
 * `mkdir ~/domoticz/scripts/js`
 * `touch ~/domoticz/scripts/js/mymowerscript.js`
 * `chmod 755 ~/domoticz/scripts/js/mymowerscript.js`
-Now, using your favourite editor, edit `~/domoticz/scripts/js/mymowerscript.js` using the above example script as a template. Change the options to reflect the IP address, username and password that you use on your Domoticz installation.
+Now, using your favourite editor, edit `~/domoticz/scripts/js/mymowerscript.js` using the above example script as a template. Change the options to reflect the IP address, username, password and the Domoticz device IDs that you use on your Domoticz installation.
 
 Check that it works by issuing the following command:
 * `~/domoticz/scripts/js/mymowerscript.js`
