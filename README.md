@@ -109,6 +109,8 @@ function printOut(mowername, eventType, idx, sValue) {
 [ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
 * `sudo apt-get update && sudo apt-get dist-upgrade`
 * install nodejs according to [this DaveJ guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/). (You might want to directly jump to section **Install Node.js**)
+
+* `npm install request`
 * `sudo apt-get install git`
 * `cd ~`
 * `npm install git://github.com/allan-gam/node-robonect-api.git`
