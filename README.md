@@ -111,8 +111,36 @@ function printOut(mowername, eventType, idx, sValue) {
 * `cd ~`
 * `npm install git://github.com/allan-gam/node-robonect-api.git`
 
+Now create your custom node-robonect-api script. Below is an example.
+* `mkdir ~/domoticz/scripts/js`
+* `touch ~/domoticz/scripts/js/mymowerscript.js`
+* `chmod 755 ~/domoticz/scripts/js/mymowerscript.js`
+Now, using your favourite editor, edit `~/domoticz/scripts/js/mymowerscript.js` using the above example script as a template. Change the options to reflect the IP address, username and password that you use on your Domoticz installation.
+
+Check that it works by issuing the following command:
+* `~/domoticz/scripts/js/mymowerscript.js`
+
+Create a "watchdog" bash script and make it run every 10 minutes to check that your custom mower script is always running.
+* `mkdir ~/domoticz/scripts/sh`
+* `touch ~/domoticz/scripts/sh/robonect.sh`
+* `chmod 755 ~/domoticz/scripts/sh/robonect.sh
+Using your favourite editor, edit `~/domoticz/scripts/sh/robonect.sh` and add the following:
+```
+#!/bin/bash
+
+if pidof -x "mymowerscript.js" >/dev/null; then
+    echo "Robonect process already running"
+		exit 0
+fi
+
+/home/pi/domoticz/scripts/js/mymowerscript.js &
+```
+Then add the following into your crontab (using `crontab -e`):
+`*/10 * * * * /home/pi/domoticz/scripts/js/mymowerscript.js`
+Save your crontab. Your script should start to run continously in the background within 10 minutes.
+
+
 #### Updating node-robonect-api to latest version on Raspberry Pi 
 
 [ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
-* `cd ~/node_modules/node-robonect-api`
-* `git pull`
+* `npm update node-robonect-api`
