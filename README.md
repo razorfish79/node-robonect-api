@@ -102,11 +102,17 @@ function printOut(mowername, eventType, idx, sValue) {
 * A Raspberry Pi 
 * A backup so that You can restore everything in case something goes wrong.
 
-#### Install on Raspberry Pi 
+#### Install node-robonect-api on a Raspberry Pi 
 
 [ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
 * `sudo apt-get update && sudo apt-get dist-upgrade`
-* install nodejs according to [this DaveJ guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/). (You might want to jump to section **Install Node.js**)
+* install nodejs according to [this DaveJ guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/). (You might want to directly jump to section **Install Node.js**)
 * `sudo apt-get install git`
-* `cd /home/pi;git clone https://github.com/allan-gam/node-robonect-api.git`
-* `cd /home/pi/node-robonect-api`
+* `cd ~`
+* `npm install git://github.com/allan-gam/node-robonect-api.git`
+
+#### Updating node-robonect-api to latest version on Raspberry Pi 
+
+[ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
+* `cd ~/node_modules/node-robonect-api`
+* `git pull`
