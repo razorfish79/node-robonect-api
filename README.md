@@ -103,6 +103,7 @@ function printOut(mowername, eventType, idx, sValue) {
 * A Raspberry Pi 
 * A backup so that You can restore everything in case something goes wrong.
 * Basic linux knowledge.
+* A user and a password must have been setup in the Robonect GUI, (Robonect->User).
 
 #### Install node-robonect-api on a Raspberry Pi 
 
