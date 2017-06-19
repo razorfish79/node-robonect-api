@@ -119,6 +119,7 @@ Now, using your favourite editor, edit `~/domoticz/scripts/js/mymowerscript.js` 
 
 Check that it works by issuing the following command:
 * `~/domoticz/scripts/js/mymowerscript.js`
+* (Press CTRL-C to exit the script)
 
 Create a "watchdog" bash script and make it run every 10 minutes to check that your custom mower script is always running.
 * `mkdir ~/domoticz/scripts/sh`
