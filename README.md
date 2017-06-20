@@ -7,9 +7,9 @@ NodeJS Module for Robonect HTTP API
 
 ## Example:
 
-In the example below, node-robonect-api has been set up to work with Domoticz.
+In the example below, node-robonect-api has been set up to work with [Domoticz using Domoticz API/JSON URL's](https://www.domoticz.com/wiki/Domoticz_API/JSON_URL's). It can easily be adapted to virtually any home automation system that has the ability to interact with external systems using http/https.
 
-Domoticz has 4 virtual text devices:
+For this example, Domoticz has been set up with 4 virtual text devices:
 
 idx	Name
 
