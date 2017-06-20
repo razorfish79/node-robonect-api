@@ -161,9 +161,9 @@ Save your crontab. Your watchdog script should start the mymowerscript.js to run
 #### Updating node-robonect-api to latest version on Raspberry Pi 
 
 [ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
-* `npm update node-robonect-api`
+* `cd ~/node_modules/node-robonect-api&&npm update`
 
-or as an alternative, update all your nodes by using:
+You can then check the version of node-robonect-api by issuing
 
-* `npm update`
+* `npm ls|grep node-robonect-api`
 
