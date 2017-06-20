@@ -71,6 +71,13 @@ robonect.on('mowerEvent', function(mowerName, category, eventType, eventValue) {
 	if (category === 'status' && eventType === 'battery') setDomoDevice(mowerName, eventType, 570, eventValue)
 });
 
+robonect.on('responseStatusCode', (statusCode) => {
+	// Handle the response status code here
+	if (statusCode != 200) {
+		console.error(statusCode);
+	}
+});
+
 robonect.on('error', (err) => {
 	// Handle the error here.  
 	console.error('whoops! there was an error');
