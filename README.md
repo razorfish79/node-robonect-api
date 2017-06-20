@@ -1,4 +1,4 @@
-# node-robonect-api
+# node-robonect-api version 0.9.0
 [![GPL-3.0](https://img.shields.io/badge/license-GPL-blue.svg)]()
 
 NodeJS Module for Robonect HTTP API 
