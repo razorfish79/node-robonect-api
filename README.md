@@ -21,6 +21,7 @@ idx	Name
 
 572	Mower Mode
 
+custom node-robonect-api script example, e.g. ~/domoticz/scripts/js/mymowerscript.js
 ```javascript
 #!/usr/bin/nodejs
 
@@ -70,6 +71,18 @@ robonect.on('mowerEvent', function(mowerName, category, eventType, eventValue) {
 	if (category === 'status' && eventType === 'battery') setDomoDevice(mowerName, eventType, 570, eventValue)
 });
 
+robonect.on('responseStatusCode', (statusCode) => {
+	// Handle the response status code here
+	if (statusCode != 200) {
+		console.error(statusCode);
+	}
+});
+
+robonect.on('error', (err) => {
+	// Handle the error here.  
+	console.error('whoops! there was an error');
+});
+
 function getDateTime() {
 	var date = new Date();
 	var hour = date.getHours();
@@ -101,12 +114,56 @@ function printOut(mowername, eventType, idx, sValue) {
 #### Prerequisits
 * A Raspberry Pi 
 * A backup so that You can restore everything in case something goes wrong.
+* Basic linux knowledge.
+* A user and a password must have been setup in the Robonect GUI, (Robonect->User).
 
-#### Install on Raspberry Pi 
+#### Install node-robonect-api on a Raspberry Pi 
 
 [ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
 * `sudo apt-get update && sudo apt-get dist-upgrade`
-* install nodejs according to [this DaveJ guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/). (You might want to jump to section **Install Node.js**)
+* install nodejs according to [this DaveJ guide](http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/). (You might want to directly jump to section **Install Node.js**)
+
+* `npm install request`
 * `sudo apt-get install git`
-* `cd /home/pi;git clone https://github.com/allan-gam/node-robonect-api.git`
-* `cd /home/pi/node-robonect-api`
+* `cd ~`
+* `npm install git://github.com/allan-gam/node-robonect-api.git`
+
+Now create your custom node-robonect-api script.
+* `mkdir ~/domoticz/scripts/js`
+* `touch ~/domoticz/scripts/js/mymowerscript.js`
+* `chmod 755 ~/domoticz/scripts/js/mymowerscript.js`
+Now, using your favourite editor, edit `~/domoticz/scripts/js/mymowerscript.js` using the above example script as a template. Change the options to reflect the IP address, username, password and the Domoticz device IDs that you use on your Domoticz installation.
+
+Check that it works by issuing the following command:
+* `~/domoticz/scripts/js/mymowerscript.js`
+* (Press CTRL-C to exit the script)
+
+Create a "watchdog" bash script and make it run every 10 minutes to check that your custom mower script is always up and running.
+* `mkdir ~/domoticz/scripts/sh`
+* `touch ~/domoticz/scripts/sh/robonectwatchdog.sh`
+* `chmod 755 ~/domoticz/scripts/sh/robonectwatchdog.sh`
+Using your favourite editor, edit `~/domoticz/scripts/sh/robonectwatchdog.sh` and add the following:
+```
+#!/bin/bash
+
+if pidof -x "mymowerscript.js" >/dev/null; then
+    echo "Robonect process already running"
+		exit 0
+fi
+
+/home/pi/domoticz/scripts/js/mymowerscript.js &
+```
+Then add the following into your crontab (using `crontab -e`):
+`*/10 * * * * /home/pi/domoticz/scripts/sh/robonectwatchdog.sh`
+Save your crontab. Your watchdog script should start the mymowerscript.js to run in the background within 10 minutes.
+
+
+#### Updating node-robonect-api to latest version on Raspberry Pi 
+
+[ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) into your Raspberry, then:
+* `npm update node-robonect-api`
+
+or as an alternative, update all your nodes by using:
+
+* `npm update`
+
