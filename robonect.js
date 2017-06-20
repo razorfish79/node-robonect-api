@@ -33,10 +33,11 @@ robonect.prototype.connect = function(options) {
 
 	function requeststatusStatus() {
 		request.get( {url : url, headers : { "Authorization" : auth } }, function (error, response, body) {
+			self.emit("responseStatusCode", response.statusCode);
 			if ((!error) && (response.statusCode === 200)) {
 				var jsonObject = JSON.parse(body);
 				handleData(self, jsonObject);
-			} else {
+			} else if (error) {
 				self.emit("error", 'FAILED TO QUERY MOWER STATUS');
 				if (TRACE) console.log('FAILED TO QUERY MOWER STATUS');
 			}

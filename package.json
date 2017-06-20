@@ -1,90 +1,96 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "git+https://github.com/allan-gam/node-robonect-api.git",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "git+https://github.com/allan-gam/node-robonect-api.git",
-        "spec": "git+https://github.com/allan-gam/node-robonect-api.git",
-        "type": "hosted",
-        "hosted": {
-          "type": "github",
-          "ssh": "git@github.com:allan-gam/node-robonect-api.git",
-          "sshUrl": "git+ssh://git@github.com/allan-gam/node-robonect-api.git",
-          "httpsUrl": "git+https://github.com/allan-gam/node-robonect-api.git",
-          "gitUrl": "git://github.com/allan-gam/node-robonect-api.git",
-          "shortcut": "github:allan-gam/node-robonect-api",
-          "directUrl": "https://raw.githubusercontent.com/allan-gam/node-robonect-api/master/package.json"
-        }
-      },
-      "/home/pi"
-    ]
-  ],
-  "_from": "git+https://github.com/allan-gam/node-robonect-api.git",
-  "_id": "node-robonect-api@0.0.1",
-  "_inCache": true,
-  "_location": "/node-robonect-api",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "git+https://github.com/allan-gam/node-robonect-api.git",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "git+https://github.com/allan-gam/node-robonect-api.git",
-    "spec": "git+https://github.com/allan-gam/node-robonect-api.git",
-    "type": "hosted",
-    "hosted": {
-      "type": "github",
-      "ssh": "git@github.com:allan-gam/node-robonect-api.git",
-      "sshUrl": "git+ssh://git@github.com/allan-gam/node-robonect-api.git",
-      "httpsUrl": "git+https://github.com/allan-gam/node-robonect-api.git",
-      "gitUrl": "git://github.com/allan-gam/node-robonect-api.git",
-      "shortcut": "github:allan-gam/node-robonect-api",
-      "directUrl": "https://raw.githubusercontent.com/allan-gam/node-robonect-api/master/package.json"
-    }
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "git+https://github.com/allan-gam/node-robonect-api.git#123d55f7c703a627b848f2c1087703136a13815b",
-  "_shasum": "a3ec87eee81b7cef3471463151c8b3eaa6dd8d67",
-  "_shrinkwrap": null,
-  "_spec": "git+https://github.com/allan-gam/node-robonect-api.git",
-  "_where": "/home/pi",
-  "author": {
-    "name": "Michael R. Stanton"
-  },
-  "bugs": {
-    "url": "https://github.com/allan-gam/node-robonect-api/issues"
-  },
-  "dependencies": {
-    "net-keepalive": "^0.3.3",
-    "xml2js": "^0.4.16"
-  },
-  "description": "robonect HTTP API Module",
-  "devDependencies": {},
-  "gitHead": "123d55f7c703a627b848f2c1087703136a13815b",
-  "homepage": "https://github.com/allan-gam/node-robonect-api#readme",
-  "keywords": [
-    "robonect",
-    "Automower",
-    "Husqvarna",
-    "Lawn Mower",
-    "Home Automation"
-  ],
-  "license": "GPL-3.0",
-  "main": "robonect.js",
-  "name": "node-robonect-api",
-  "optionalDependencies": {},
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/allan-gam/node-robonect-api.git"
-  },
-  "scripts": {
-    "test": "echo 0"
-  },
-  "version": "0.0.1"
+	"_args": [
+		[
+			{
+				"raw": "git+https://github.com/allan-gam/node-robonect-api.git",
+				"scope": null,
+				"escapedName": null,
+				"name": null,
+				"rawSpec": "git+https://github.com/allan-gam/node-robonect-api.git",
+				"spec": "git+https://github.com/allan-gam/node-robonect-api.git",
+				"type": "hosted",
+				"hosted": {
+					"type": "github",
+					"ssh": "git@github.com:allan-gam/node-robonect-api.git",
+					"sshUrl": "git+ssh://git@github.com/allan-gam/node-robonect-api.git",
+					"httpsUrl": "git+https://github.com/allan-gam/node-robonect-api.git",
+					"gitUrl": "git://github.com/allan-gam/node-robonect-api.git",
+					"shortcut": "github:allan-gam/node-robonect-api",
+					"directUrl": "https://raw.githubusercontent.com/allan-gam/node-robonect-api/master/package.json"
+				}
+			},
+			"/home/pi"
+		]
+	],
+	"_from": "git+https://github.com/allan-gam/node-robonect-api.git",
+	"_id": "node-robonect-api@0.0.1",
+	"_inCache": true,
+	"_location": "/node-robonect-api",
+	"_phantomChildren": {
+		
+	},
+	"_requested": {
+		"raw": "git+https://github.com/allan-gam/node-robonect-api.git",
+		"scope": null,
+		"escapedName": null,
+		"name": null,
+		"rawSpec": "git+https://github.com/allan-gam/node-robonect-api.git",
+		"spec": "git+https://github.com/allan-gam/node-robonect-api.git",
+		"type": "hosted",
+		"hosted": {
+			"type": "github",
+			"ssh": "git@github.com:allan-gam/node-robonect-api.git",
+			"sshUrl": "git+ssh://git@github.com/allan-gam/node-robonect-api.git",
+			"httpsUrl": "git+https://github.com/allan-gam/node-robonect-api.git",
+			"gitUrl": "git://github.com/allan-gam/node-robonect-api.git",
+			"shortcut": "github:allan-gam/node-robonect-api",
+			"directUrl": "https://raw.githubusercontent.com/allan-gam/node-robonect-api/master/package.json"
+		}
+	},
+	"_requiredBy": [
+		"#USER"
+	],
+	"_resolved": "git+https://github.com/allan-gam/node-robonect-api.git#123d55f7c703a627b848f2c1087703136a13815b",
+	"_shasum": "a3ec87eee81b7cef3471463151c8b3eaa6dd8d67",
+	"_shrinkwrap": null,
+	"_spec": "git+https://github.com/allan-gam/node-robonect-api.git",
+	"_where": "/home/pi",
+	"author": {
+		"name": "Michael R. Stanton"
+	},
+	"bugs": {
+		"url": "https://github.com/allan-gam/node-robonect-api/issues"
+	},
+	"dependencies": {
+		"net-keepalive": "^0.3.3",
+		"xml2js": "^0.4.16"
+	},
+	"description": "robonect HTTP API Module",
+	"devDependencies": {
+		
+	},
+	"gitHead": "123d55f7c703a627b848f2c1087703136a13815b",
+	"homepage": "https://github.com/allan-gam/node-robonect-api#readme",
+	"keywords": [
+		"robonect",
+		"Automower",
+		"Husqvarna",
+		"Lawn Mower",
+		"Home Automation"
+	],
+	"license": "GPL-3.0",
+	"main": "robonect.js",
+	"name": "node-robonect-api",
+	"optionalDependencies": {
+		
+	},
+	"readmeFilename": "README.md",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/allan-gam/node-robonect-api.git"
+	},
+	"scripts": {
+		"test": "echo 0"
+	},
+	"version": "0.0.1"
 }
