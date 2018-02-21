@@ -3,7 +3,8 @@
 
 NodeJS Module for Robonect HTTP API 
 
-## Status: Work in Progress
+# PROJECT DISCONTINUED
+Unfortunately, I won't be able to continue development due to lack of time. If you wish to take over maintenance of the project, please contact me (do that by reporting an issue).
 
 ## Example:
 
